@@ -11,7 +11,7 @@ services:
   alist:
     restart: always
     volumes:
-      - v:/opt/alist/data
+      - data:/opt/alist/data
     ports:
       - "5244:5244"
     environment:
