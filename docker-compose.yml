@@ -16,7 +16,7 @@ services:
       - UMASK=022
       - TZ=Asia/Shanghai
     depends_on:
-      - app
+      - alist
     cap_add:
       - SYS_ADMIN
       
