@@ -15,7 +15,6 @@ services:
       - UMASK=022
       - TZ=Asia/Shanghai
     privileged: true
-volumes:
     container_name: alist
     image: xhofe/alist:latest
 volumes:
