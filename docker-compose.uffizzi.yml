@@ -15,10 +15,6 @@ services:
       - UMASK=022
       - TZ=Asia/Shanghai
     privileged: true
-    depends_on:
-      - app
-    cap_add:
-      - SYS_ADMIN
 volumes:
     container_name: alist
     image: xhofe/alist:latest
