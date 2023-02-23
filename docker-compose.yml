@@ -1,11 +1,6 @@
-services:
-  foo:
-    image: xhofe/alist:latest
-  alist-loadbalancer:
-    image: xhofe/alist:latest
 x-uffizzi:
   ingress:
-    service: alist-loadbalancer
+    service: alist
     port: 8080
 services:
   alist:
