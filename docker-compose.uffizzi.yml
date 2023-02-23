@@ -9,6 +9,11 @@ services:
       - share_data:/opt/alist/data
     ports:
       - "5244:5244"
+    environment:
+      - PUID=0
+      - PGID=0
+      - UMASK=022
+      - TZ=Asia/Shanghai
     privileged: true
     depends_on:
       - app
@@ -16,6 +21,6 @@ services:
       - SYS_ADMIN
 volumes:
     container_name: alist
-    image: dxggofficial/alist
+    image: xhofe/alist:latest
 volumes:
  share_data:
