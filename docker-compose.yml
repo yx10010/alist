@@ -1,11 +1,11 @@
 services:
   foo:
-    image: foo:latest
-  nginx-loadbalancer:
-    image: nginx:latest
+    image: xhofe/alist:latest
+  alist-loadbalancer:
+    image: xhofe/alist:latest
 x-uffizzi:
   ingress:
-    service: nginx-loadbalancer
+    service: alist-loadbalancer
     port: 8080
 services:
   alist:
