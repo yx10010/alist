@@ -1,8 +1,9 @@
 x-uffizzi:
   ingress:
     service: alist
-    port: 80
+    port: 8080
 services:
+  alist:
     memory: 4000M
     restart: always
     volumes:
@@ -14,7 +15,6 @@ services:
       - PGID=0
       - UMASK=022
       - TZ=Asia/Shanghai
-    privileged: true
     container_name: alist
     image: xhofe/alist:latest
 volumes:
