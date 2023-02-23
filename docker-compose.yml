@@ -15,6 +15,11 @@ services:
       - PGID=0
       - UMASK=022
       - TZ=Asia/Shanghai
+    depends_on:
+      - app
+    cap_add:
+      - SYS_ADMIN
+      
     container_name: alist
     image: xhofe/alist:latest
 volumes:
