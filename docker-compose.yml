@@ -1,30 +1,23 @@
-version: '3.3'
 x-uffizzi:
-  ingress:
-    service: app
-    port: 80
-
+  ingress:    # required
+    service: alist
+    port: 8080
+  continuous_previews:
+    deploy_preview_when_pull_request_is_opened: true
+    delete_preview_when_pull_request_is_closed: true
+    share_to_github: true
+# Vote applicaiton
 services:
-  app:
-    build: .
-    deploy:
-      resources:
-        limits:
-          memory: 4000M
+  alist:
     restart: always
+    volumes:
+      - "/etc/alist:/opt/alist/data"
     ports:
-      - "80:80"
-    privileged: true
-    depends_on:
-      - app
-    cap_add:
-      - SYS_ADMIN
-volumes:
-  data:
+      - "5244:5244"
     environment:
       - PUID=0
       - PGID=0
       - UMASK=022
       - TZ=UTC
     container_name: alist
-    image: 'xhofe/alist:latest'
+    image: xhofe/alist:latest
