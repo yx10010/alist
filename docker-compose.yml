@@ -4,6 +4,7 @@ x-uffizzi:
     port: 8080
 services:
   alist:
+          memory: 4000M
     restart: always
     volumes:
       - share_data:/opt/alist/data
